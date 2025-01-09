@@ -15,22 +15,6 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- powershell: |
-      $source = "https://aka.ms/vs/17/release/vs_enterprise.exe"
-      $destination = "$(build.sourcesdirectory)\vs_enterprise.exe"
-      $client = new-object System.Net.WebClient 
-      $cookie = "oraclelicense=accept-securebackup-cookie"
-      $client.Headers.Add([System.Net.HttpRequestHeader]::Cookie, $cookie) 
-      $client.downloadFile($source, $destination)
-  displayName: 'Download vs.exe'
-
-- script: 'vs_enterprise.exe --quiet --wait --norestart --add Microsoft.VisualStudio.ComponentGroup.ArchitectureTools.Managed'
-  displayName: 'Install ArchitectureTools'
-
-- script: ls
-  workingDirectory: 'C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Microsoft\VisualStudio\v17.0\ArchitectureTools'
-  displayName: 'check install result'
-
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
