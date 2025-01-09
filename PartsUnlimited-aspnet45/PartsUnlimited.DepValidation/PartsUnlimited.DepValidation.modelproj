@@ -21,9 +21,9 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <ItemGroup>
-    <Validate Include="DependencyValidation1.layerdiagram">
+    <None Include="DependencyValidation1.layerdiagram">
       <SubType>Content</SubType>
-    </Validate>
+    </None>
     <Validate Include="DependencyValidation1.layerdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>DependencyValidation1.layerdiagram</DependentUpon>
