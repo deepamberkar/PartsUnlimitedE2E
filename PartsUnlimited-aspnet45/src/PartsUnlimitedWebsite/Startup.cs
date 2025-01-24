@@ -18,7 +18,7 @@ namespace PartsUnlimited
             ConfigureAuth(app);
 
             TelemetryConfiguration.Active.InstrumentationKey = WebConfigurationManager.AppSettings["Keys:ApplicationInsights:InstrumentationKey"];
-
+            
         }
     }
 }
